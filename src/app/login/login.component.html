@@ -1,0 +1,32 @@
+
+<img class ="banner" src="https://imgur.com/K8se8Rj.jpg">
+
+
+    <div class ="loginBox">
+      <div class="inputs">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Username">
+            </mat-form-field>
+          <br>
+            <mat-form-field class="example-full-width"  type="password">
+              <input (blur)="authenticate(password.value)" #password type="password" id="password" name="password" matInput placeholder="Password">
+            </mat-form-field>
+          </form>
+
+          <!--button default navigates to the map page-->
+          <button *ngIf="authToken" mat-raised-button routerLink="/dashboard">login</button>
+          <button *ngIf="!authToken || authToken === null" mat-raised-button >login</button>
+          
+          <br>
+          <br>
+          <br>
+
+          <div *ngIf="authToken==false">
+            <label class="error">Incorrect Password</label>
+          </div>  
+
+        </div>
+    
+  
+</div>

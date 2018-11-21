@@ -1,0 +1,243 @@
+<!-- top banner -->
+<app-top-banner></app-top-banner>
+
+<div class="boxPosition">
+  <div class="boxDesign">
+    <h1 class="title">Lead Information</h1>
+    <hr>
+
+    <table style="width:90%; margin: auto;">
+    <tr>
+      <th>
+          <mat-form-field style="width: 300px;">
+              <textarea #name (blur)="addLeadName(name.value)" type="text" matInput placeholder="Name"></textarea>
+          </mat-form-field>
+      </th>
+      &nbsp;&nbsp;&nbsp;
+      <th>
+          <mat-form-field style="width: 300px;">
+              <textarea #email (blur)="addLeadEmail(email.value)" type="text" matInput placeholder="Email"></textarea>
+          </mat-form-field> 
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <mat-form-field style="width: 300px;">
+            <textarea #title (blur)="addLeadTitle(title.value)" type="text" matInput placeholder="Title"></textarea>
+        </mat-form-field> 
+      </th>
+      &nbsp;&nbsp;&nbsp;
+      <th>
+        <mat-form-field style="width: 300px;">
+              <textarea #phone (blur)="addLeadPhone(phone.value)" type="text" matInput placeholder="Phone Number"></textarea>
+         </mat-form-field>
+
+      </th>
+
+    </tr>
+
+    <tr>
+        <th>
+          <mat-form-field style="width: 300px;">
+              <textarea #division (blur)="addLeadDivision(division.value)" type="text" matInput placeholder="Division"></textarea>
+          </mat-form-field> 
+        </th>
+        &nbsp;&nbsp;&nbsp;
+        <th>
+          <mat-form-field style="width: 300px;">
+                <textarea #supervisor (blur)="addLeadSupervisor(supervisor.value)" type="text" matInput placeholder="Supervisor Name"></textarea>
+           </mat-form-field>
+  
+        </th>
+  
+      </tr>
+    
+    
+    </table>
+
+<!--    ----------       PROJECT DETAILS    ------------               -->
+    <h1 class="title">Project Details</h1>
+    <hr>
+
+    <table style="width:90%; margin: auto;">
+        <tr>
+          <th >
+              <mat-form-field style="width: 680px; float:center;">
+                  <textarea #title (blur)="addTitle(title.value)" type="text" matInput placeholder="Project Title"></textarea>
+                </mat-form-field>
+          </th>
+          
+          
+        </tr>
+    
+
+        <tr>
+            <th>
+
+                <mat-form-field style="width: 160px;" >
+                    <input matInput [matDatepicker]="picker" placeholder="Prelim Start" [(ngModel)]="this.project.prelimStart" >
+                    <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker [(ngModel)]="this.project.prelimStart" ngDefaultControl (selectedChanged)="addPrelimStart($event)"></mat-datepicker>
+                </mat-form-field>
+          
+                &nbsp;
+                  <mat-form-field style="width: 160px;" >
+                      <input matInput [matDatepicker]="picker1" placeholder="Prelim End" [(ngModel)]="this.project.prelimEnd" >
+                      <mat-datepicker-toggle  matSuffix [for]="picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1 [(ngModel)]="this.project.prelimEnd" ngDefaultControl (selectedChanged)="addPrelimEnd($event)"></mat-datepicker>
+                  </mat-form-field>
+                  &nbsp;
+                  <mat-form-field style="width: 160px;" >
+                      <input matInput [matDatepicker]="picker2" placeholder="Engage Start" [(ngModel)]="this.project.engageStart" >
+                      <mat-datepicker-toggle  matSuffix [for]="picker2"></mat-datepicker-toggle>
+                      <mat-datepicker #picker2 [(ngModel)]="this.project.engageStart" ngDefaultControl (selectedChanged)="addEngageStart($event)"></mat-datepicker>
+                  </mat-form-field>
+            
+                  &nbsp;
+                    <mat-form-field style="width: 160px;" >
+                        <input matInput [matDatepicker]="picker3" placeholder="Engage End" [(ngModel)]="this.project.engageEnd" >
+                        <mat-datepicker-toggle  matSuffix [for]="picker3"></mat-datepicker-toggle>
+                        <mat-datepicker #picker3 [(ngModel)]="this.project.engageEnd" ngDefaultControl (selectedChanged)="addEngageEnd($event)"></mat-datepicker>
+                    </mat-form-field>                  
+                </th>
+
+        </tr>
+      
+      
+        
+        <tr>
+            <th>
+            <mat-form-field style="width: 160px;" >
+                <input matInput [matDatepicker]="picker4" placeholder="Develop Start" [(ngModel)]="this.project.developStart" >
+                <mat-datepicker-toggle  matSuffix [for]="picker4"></mat-datepicker-toggle>
+                <mat-datepicker #picker4 [(ngModel)]="this.project.developStart" ngDefaultControl (selectedChanged)="addDevelopStart($event)"></mat-datepicker>
+            </mat-form-field>
+      
+            &nbsp;
+              <mat-form-field style="width: 160px;" >
+                  <input matInput [matDatepicker]="picker5" placeholder="Develop End" [(ngModel)]="this.project.developEnd" >
+                  <mat-datepicker-toggle  matSuffix [for]="picker5"></mat-datepicker-toggle>
+                  <mat-datepicker #picker5 [(ngModel)]="this.project.developEnd" ngDefaultControl (selectedChanged)="addDevelopEnd($event)"></mat-datepicker>
+              </mat-form-field>
+
+             &nbsp; 
+            <mat-form-field style="width: 160px;" >
+                <input matInput [matDatepicker]="picker6" placeholder="Design Start" [(ngModel)]="this.project.designStart" >
+                <mat-datepicker-toggle  matSuffix [for]="picker6"></mat-datepicker-toggle>
+                <mat-datepicker #picker6 [(ngModel)]="this.project.designStart" ngDefaultControl (selectedChanged)="addDesignStart($event)"></mat-datepicker>
+            </mat-form-field>
+      
+            &nbsp;
+              <mat-form-field style="width: 160px;" >
+                  <input matInput [matDatepicker]="picker7" placeholder="Design End" [(ngModel)]="this.project.designEnd" >
+                  <mat-datepicker-toggle  matSuffix [for]="picker7"></mat-datepicker-toggle>
+                  <mat-datepicker #picker7 [(ngModel)]="this.project.designEnd" ngDefaultControl (selectedChanged)="addDesignEnd($event)"></mat-datepicker>
+              </mat-form-field>
+            </th>
+        </tr>
+
+        <tr>
+          <th>
+              <mat-form-field style="width: 160px;" >
+                  <input matInput [matDatepicker]="picker8" placeholder="Bid Award Start" [(ngModel)]="this.project.bidAwardStart" >
+                  <mat-datepicker-toggle  matSuffix [for]="picker8"></mat-datepicker-toggle>
+                  <mat-datepicker #picker8 [(ngModel)]="this.project.bidAwardStart" ngDefaultControl (selectedChanged)="addBidAwardStart($event)"></mat-datepicker>
+              </mat-form-field>
+        
+              &nbsp;
+                <mat-form-field style="width: 160px;" >
+                    <input matInput [matDatepicker]="picker9" placeholder="Bid Award End" [(ngModel)]="this.project.bidAwardEnd" >
+                    <mat-datepicker-toggle  matSuffix [for]="picker9"></mat-datepicker-toggle>
+                    <mat-datepicker #picker9 [(ngModel)]="this.project.bidAwardEnd" ngDefaultControl (selectedChanged)="addBidAwardEnd($event)"></mat-datepicker>
+                </mat-form-field>
+             
+                &nbsp;
+              <mat-form-field style="width: 160px;" >
+                  <input matInput [matDatepicker]="picker10" placeholder="Implement Start" [(ngModel)]="this.project.implementStart" >
+                  <mat-datepicker-toggle  matSuffix [for]="picker10"></mat-datepicker-toggle>
+                  <mat-datepicker #picker10 [(ngModel)]="this.project.implementStart" ngDefaultControl (selectedChanged)="addImplementStart($event)"></mat-datepicker>
+              </mat-form-field>
+        
+              &nbsp;
+                <mat-form-field style="width: 160px;" >
+                    <input matInput [matDatepicker]="picker11" placeholder="Implement End" [(ngModel)]="this.project.implementEnd" >
+                    <mat-datepicker-toggle  matSuffix [for]="picker11"></mat-datepicker-toggle>
+                    <mat-datepicker #picker11 [(ngModel)]="this.project.implementEnd" ngDefaultControl (selectedChanged)="addImplementEnd($event)"></mat-datepicker>
+                </mat-form-field>
+          </th>
+        </tr>
+        <tr>
+          <th>
+              <mat-form-field style="width: 330px;">
+                  <mat-select [(value)]="project.category" placeholder="Category">
+                    <mat-option *ngFor="let category of category" [value]="category">
+                      {{category}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+             &nbsp; 
+            
+              <mat-form-field style="width: 330px;">
+                  <mat-select [(value)]="project.modal" placeholder="Modal">
+                    <mat-option *ngFor="let modal of modal" [value]="modal">
+                      {{modal}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </th>
+        </tr>
+        <tr>
+          <th>
+              <mat-form-field style="width: 680px;">
+                  <mat-select [(value)]="project.level" placeholder="Project Level">
+                    <mat-option *ngFor="let level of level" [value]="level">
+                      {{level}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+          </th>
+        </tr>
+
+        <tr>
+                 
+            <textarea style="width: 330px; height: 200px;"
+            placeholder="Background: brief history of the project which shall identify the adopted plan, policy, or process from which the project originates and describe how this project was initiated"
+            #background (blur)="addBackground(background.value)" type="text" ></textarea>
+            &nbsp;
+
+            <textarea style="width: 330px; height: 200px;"
+            placeholder="Statement: how the project addresses mobility priorities and/or serves the transportation needs at the site and/or within the neighborhood"
+            #statement (blur)="addStatement(statement.value)" type="text" ></textarea>
+             
+             
+        </tr>
+
+        <tr>
+            <textarea style="width: 330px; height: 200px;"
+            placeholder="Goals: list of 3-6 goals and objectives the project aims to achieve, which shall serve as critical success factors"
+            #goals (blur)="addGoals(goals.value)" type="text" ></textarea>
+            &nbsp;
+
+            <textarea style="width: 330px; height: 200px;"
+            placeholder="Description: changes and/or updates being implemented by the project"
+            #description (blur)="addDescription(description.value)" type="text" ></textarea>
+
+
+
+        </tr>
+        <br>
+        <tr>
+          <button (click)="sendObject()" style="background-color: lightblue;" routerLink="/streetSelect" mat-raised-button>Next: Street Selection</button>
+
+
+        </tr>       
+        
+    </table>
+
+
+
+
+  </div>
+  <br><br><br>
+</div> 

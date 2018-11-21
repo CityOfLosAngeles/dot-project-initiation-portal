@@ -1,0 +1,39 @@
+.banner{
+    max-height: 30%;
+    
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+
+.loginBox{
+    background-color:white;
+    height: 200px;
+    width: 1500px;
+    max-width: 60%;
+    max-height: 50%;
+    
+    margin:auto;
+    padding: 20px;
+    
+    
+    
+    margin-bottom: 50px;
+    
+
+}
+
+.inputs{
+    margin:auto;
+    
+    text-align:center;
+}
+
+.error{
+    
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
+    border-color: red;
+    text-align:center;
+}

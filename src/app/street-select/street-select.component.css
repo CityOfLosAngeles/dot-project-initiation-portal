@@ -1,0 +1,52 @@
+.boxDesign{
+    width: 1500px;
+    max-width:100%;
+    height: 220px;
+    border: 1px solid lightslategray;
+    float: center;
+    text-align: center;
+    background-color: lightgray;
+    
+
+}
+
+.boxPosition{
+    padding-top:3%;
+    position: absolute;
+    
+    top: 10%; 
+    
+    margin-top: -75px;
+    
+}
+
+hr{
+    width: 95%;
+    height: 1px;
+    background-color: lightgray;
+}
+
+.title{
+    font-family: Calibri;
+    font-weight: lighter;
+    padding-left: 3%;
+    color: slategray;
+    text-align: left;
+    
+}
+
+h2{
+    color: slategray;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 120%;
+}
+
+h3{
+    color: slategray;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 160%;
+    margin-top: 5px;
+
+}
