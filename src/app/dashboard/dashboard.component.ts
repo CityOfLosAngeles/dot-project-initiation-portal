@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { loadModules } from 'esri-loader';
 import esri = __esri;
-import { DashboardService } from '../dashboard.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   public newProject : boolean; // token to determine whether or not to display new project component 
 
-  constructor(private _dashboardService: DashboardService) { }
+  constructor() { }
 
   // on cick from NEW PROJECT button
   onClick(){
@@ -38,21 +38,16 @@ export class DashboardComponent implements OnInit {
         let query = new Query();
         query.returnGeometry = false;
         query.outFields =  ["MIP_ID", "Title", "Category"];
-
         //on(dom.byId("execute"), "click", execute);
-
         
         function execute(){
           queryTask.execute(query, showResults);
           
         }
-
         function showResults(){
           console.log("helloworld")
-
         }
         
-
       })
       */
 
