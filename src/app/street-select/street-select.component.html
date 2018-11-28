@@ -9,15 +9,15 @@
     <table>
       <tr>
         <th style="width: 350px;">
-          <h2>Name: </h2>
+          <h2>Name: {{project.title}}</h2>
         </th>
 
         <th style="width: 350px;">
-          <h2>Category:</h2>
+          <h2>Category: {{project.category}}</h2>
         </th>
 
         <th style="width: 350px;">
-          <h2>Modal:</h2>
+          <h2>Modal: {{project.modal}}</h2>
         </th> 
 
       </tr>
@@ -25,15 +25,15 @@
 
       <tr>
           <th style="width: 350px;">
-            <h2>Lead: </h2>
+            <h2>Lead: {{project.leadName}} </h2>
           </th>
   
           <th style="width: 350px;">
-            <h2>Level:</h2>
+            <h2>Level: {{project.level}}</h2>
           </th>
   
           <th style="width: 350px;">
-            <h2>Goals:</h2>
+            <h2>Description: {{project.description}}</h2>
           </th> 
   
         </tr>
@@ -46,13 +46,15 @@
 </div>
 
 <!-- the map -->
-<div style="padding-top:16%;"><app-esri-map></app-esri-map> </div>
+<div style="margin-top:16%;"><app-esri-map></app-esri-map> </div>
 
+<!--
 <div>
   <h3>Street Selection</h3>
   <textarea style="width: 300px; height:500px; margin-left: 20px;"></textarea>
   <br>
   <div style="padding-left:75px;">
-    <button style="background-color: lightblue;" mat-raised-button>Submit</button>
+    <button (click) = "onClick()" style="background-color: lightblue;" mat-raised-button>Submit</button>
   </div>
 </div>
+-->
