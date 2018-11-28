@@ -1,4 +1,6 @@
 import { Component, OnInit} from '@angular/core';
+import { NewProjectService } from '../new-project.service';
+
 
 @Component({
   selector: 'app-new-project',
@@ -18,42 +20,112 @@ export class NewProjectComponent implements OnInit {
                   "Level 2: Suite of minor changes, or includes one component that will require education for use",
                   "Level 3: Major roadway reconfiguration or network level intervention"]
 
-  public project = {
-    title: '',
-    leadName: '',
-    leadEmail: '',
-    leadPhone:'',
-    leadTitle:'',
-    leadDivision:'',
-    leadSupervisior:'',
-    category: '',
-    modal:'',
-    prelimStart: '',
-    prelimEnd: '',
-    engageStart: '',
-    engageEnd: '',
-    developStart: '',
-    developEnd: '',
-    designStart: '',
-    designEnd: '',
-    bidAwardStart: '',
-    bidAwardEnd: '',
-    implementStart: '',
-    implementEnd: '',
-    level:"",
-    background:"",
-    statement:"",
-    goals:"",
-    description:""
-   
+  public lifeCyclePhase=["1) Project Initiation/Capacity Building + Empowerment",
+                        "2) Conceptual Design/Civic Engagement + Community Based Development",
+                        "3) Technical Feasibilitiy/Community-Based Learning",
+                        "4) Project Design + Funding/Public Information",
+                        "5) Final Design + Procurement/Outreach + Public Engagement",
+                        "6) Installation/Outreach + Social Change",
+                        "7) Project Evaluation/Reflection"]   
+  
+  public active=["Active: lead is actively working",
+                "Inactive: lead is not actively working to deliver"]
 
-  }
-  constructor() {}
+  public funded=["Fully Funded: total costs are fully funded",
+                  "Partially Funded: There are funding gaps",
+                  "Unfunded: No current funding"]
+
+  public project = { title: '', leadName: '', leadEmail: '', leadPhone:'', leadTitle:'', leadDivision:'', leadSupervisior:'',
+                    category: '', modal:'', prelimStart: '', prelimEnd: '', engageStart: '', engageEnd: '', developStart: '',
+                    developEnd: '', designStart: '', designEnd: '', bidAwardStart: '', bidAwardEnd: '', implementStart: '',
+                    implementEnd: '', level:"", background:"", statement:"", goals:"", description:"", primaryPS:"", cs1:"",
+                    cs2:"", boundaries:"", councilDistricts:"", stakeholders:"", agencies:"", lifeCyclePhase:"", active:"",
+                    funded:"", costEstimate:"", budget:"", fundingSource:"", potentialSource:"", attemptedSource:"",
+                    futureSource:"", constructionMethods:"", milestones:"",
+                  }
+                  
+  constructor(private _newProjectService: NewProjectService) {}
 
  
-  
   // assign variable from html to variable in here
   // there might be a better way to do this, polish later
+  addCostEstimate(cost: string)
+  {
+    this.project.costEstimate= cost;
+  }
+
+  addBudget(budget:string){
+    this.project.budget= budget;
+  }
+
+  addFundingSource(source: string)
+  {
+    this.project.fundingSource= source;
+  }
+
+  addPotential(source:string){
+    this.project.potentialSource= source;
+  }
+  
+  addAttempted(source:string){
+    this.project.attemptedSource= source;
+  }
+
+  addFuture(source:string){
+    this.project.futureSource= source;
+  }
+  
+  addConstructionMethods(methods:string){
+    this.project.constructionMethods= methods;
+  }
+
+  addMilestones(milestones: string)
+  {
+    this.project.milestones= milestones;
+  }
+
+  addActive(active: string)
+  {
+    this.project.active= active;
+  }
+
+  addFunded(funded:string){
+    this.project.funded= funded;
+  }
+
+  addLifeCyclePhase(lifeCyclePhase: string)
+  {
+    this.project.lifeCyclePhase= lifeCyclePhase;
+  }
+
+  addStakeholders(stakeholders:string){
+    this.project.stakeholders= stakeholders;
+  }
+  
+  addAgencies(agencies:string){
+    this.project.agencies= agencies;
+  }
+
+  addCouncilDistricts(councilDistrict:string){
+    this.project.councilDistricts= councilDistrict;
+  }
+  
+  addBoundaries(boundary:string){
+    this.project.boundaries= boundary;
+  }
+
+  addCS1(cs1:string){
+    this.project.cs1 = cs1;
+  }
+
+  addCS2(cs2:string){
+    this.project.cs2 = cs2;
+  }
+
+  addPrimaryPS(ps:string){
+    this.project.primaryPS = ps;
+  }
+
   addTitle(title: string)
   {
     this.project.title = title;
@@ -184,17 +256,7 @@ export class NewProjectComponent implements OnInit {
   
 
   onClick(){
-    console.log("TITLE - " + this.project.title);
-    console.log("LEAD NAME - " + this.project.leadName);
-    console.log("CATEGORY - " + this.project.category);
-    console.log("MODAL - " + this.project.modal);
-    console.log("PRELIM START - " + this.project.prelimStart);
-    console.log("PRELIM END - " + this.project.prelimEnd);
-    console.log(this.project.engageStart);
-    console.log(this.project.engageEnd);
-    console.log(this.project.developStart);
-    console.log(this.project.developEnd);
-    
+    this._newProjectService.setData(this.project);
     
     
   }
