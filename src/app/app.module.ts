@@ -10,7 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { EsriMapComponent } from './esri-map/esri-map.component';
-import { DashboardService } from './dashboard.service';
+
 import { HttpClientModule } from '@angular/common/http';
 import { NewProjectComponent } from './new-project/new-project.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -18,8 +18,7 @@ import { MatNativeDateModule } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import { TopBannerComponent } from './top-banner/top-banner.component';
 import { StreetSelectComponent } from './street-select/street-select.component';
-
-
+import { NewProjectService } from './new-project.service';
 
 
 
@@ -32,6 +31,7 @@ import { StreetSelectComponent } from './street-select/street-select.component';
     NewProjectComponent,
     TopBannerComponent,
     StreetSelectComponent
+    
     
   
   ],
@@ -50,7 +50,7 @@ import { StreetSelectComponent } from './street-select/street-select.component';
 
    
   ],
-  providers: [DashboardService, MatDatepickerModule],
+  providers: [MatDatepickerModule, NewProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
